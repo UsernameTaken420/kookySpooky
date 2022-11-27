@@ -26,7 +26,7 @@ if __name__ == "__main__":
     while correctInput == False:
         print(f"Enter amount of cards to draw: ")
         try:
-            drawAmount = int(input())
+            drawAmount = abs(int(input()))
             correctInput = True
         except ValueError:
             print(f"You're supposed to input a number, try again")
