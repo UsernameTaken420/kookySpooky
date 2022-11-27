@@ -12,6 +12,14 @@ def generateDeck():
     random.shuffle(deck)
     return deck
 
+def drawCard(deck):
+    card = deck.pop()
+    if card[2] == "REV":
+        return card[1], card[5]
+    else:
+        return card[1], card[4]
+
+
 if __name__ == "__main__":
     deck = generateDeck()
     correctInput = False
@@ -24,9 +32,5 @@ if __name__ == "__main__":
             print(f"You're supposed to input a number, try again")
     print(f"Drawing {drawAmount} cards")
     for number in range(drawAmount):
-        drawn = deck.pop()
-        if drawn[2] == "REV":
-            print(f"{drawn[1]} reversed, \"{drawn[5]}\"")
-        else:
-            print(f"{drawn[1]}, \"{drawn[4]}\"")
+        print(f"{drawCard(deck)}")
     
