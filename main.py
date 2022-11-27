@@ -15,6 +15,7 @@ def generateDeck():
 def drawCard(deck):
     card = deck.pop()
     if card[2] == "REV":
+        card[1] += " reversed"
         return card[1], card[5]
     else:
         return card[1], card[4]
