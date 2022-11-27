@@ -12,3 +12,7 @@ def test_deck(deck):
 def test_draw(deck):
     card = main.drawCard(deck)
     assert (type(card) == tuple) and (type(card[0]) == str) and (type(card[1]) == str)
+
+def test_overdraw(deck):
+    with pytest.raises(IndexError):
+        main.drawCard([])
