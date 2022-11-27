@@ -33,5 +33,8 @@ if __name__ == "__main__":
             print(f"You're supposed to input a number, try again")
     print(f"Drawing {drawAmount} cards")
     for number in range(drawAmount):
-        print(f"{drawCard(deck)}")
-    
+        try:
+            print(f"{drawCard(deck)}")
+        except IndexError:
+            print(f"The deck is empty")
+            break
